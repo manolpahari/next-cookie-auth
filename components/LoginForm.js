@@ -4,8 +4,8 @@ import { loginUser } from '../lib/auth';
 
 export class LoginForm extends Component {
     state = {
-        email: '',
-        password: ''
+        email: 'Rey.Padberg@karina.biz',
+        password: 'ambrose.net'
     }
 
     handleChange = (event) => {
@@ -18,20 +18,21 @@ export class LoginForm extends Component {
     }
 
     render() {
+        const { email, password } = this.state;
         return (
             <div className="login-form">
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="email"
                         name="email"
-                     
+                        value={email}
                         placeholder="email"
                         onChange={this.handleChange}>
                     </input>
                     <input 
                         type="password"
                         name="password"
-                        
+                        value={password}
                         placeholder="password"
                         onChange={this.handleChange}>
                     </input>
