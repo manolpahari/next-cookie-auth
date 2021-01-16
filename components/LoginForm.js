@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { loginUser } from '../lib/auth';
+import Router from 'next/router';
 
 export class LoginForm extends Component {
     state = {
@@ -14,7 +15,8 @@ export class LoginForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        loginUser(this.state.email, this.state.password);
+        loginUser(this.state.email, this.state.password)
+            .then(() => Router.push('/profile'));
     }
 
     render() {
